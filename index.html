@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NASKYWA</title>
+
+<style>
+:root{--c:#ff2b2b}
+*{box-sizing:border-box}
+
+body{
+margin:0;
+height:100vh;
+background:radial-gradient(circle at top,#0d0d0d,#000 70%);
+font-family:-apple-system,BlinkMacSystemFont,system-ui;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center
+}
+
+.panel{
+width:340px;
+background:linear-gradient(180deg,#0a0a0a,#000);
+border:1.5px solid rgba(255,60,60,.6);
+border-radius:22px;
+box-shadow:0 0 40px rgba(255,40,40,.35);
+padding:18px
+}
+
+.title{
+text-align:center;
+color:var(--c);
+font-weight:900;
+letter-spacing:4px;
+margin-bottom:18px
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:14px 0;
+font-size:14px
+}
+
+.sw{
+width:46px;
+height:24px;
+background:#181818;
+border-radius:20px;
+position:relative;
+cursor:pointer
+}
+.sw::after{
+content:"";
+width:18px;
+height:18px;
+background:#bbb;
+border-radius:50%;
+position:absolute;
+top:3px;
+left:3px;
+transition:.2s
+}
+.sw.on{background:var(--c)}
+.sw.on::after{left:25px;background:#000}
+
+label{
+font-size:12px;
+opacity:.75
+}
+
+input[type=range]{
+width:100%;
+accent-color:var(--c)
+}
+
+.value{
+text-align:center;
+margin-top:6px;
+font-weight:700;
+color:var(--c)
+}
+
+.btn{
+width:100%;
+padding:14px;
+margin-top:18px;
+border:none;
+border-radius:16px;
+background:linear-gradient(180deg,#ff4a4a,#ff1f1f);
+color:#000;
+font-weight:900;
+letter-spacing:1.5px
+}
+</style>
+</head>
+
+<body>
+<div class="panel">
+<div class="title">RAVENFFZ</div>
+
+<div class="row">
+<span>Ativar</span>
+<div class="sw" onclick="this.classList.toggle('on')"></div>
+</div>
+
+<div class="row">
+<span>Otimização</span>
+<div class="sw" onclick="this.classList.toggle('on')"></div>
+</div>
+
+<div class="row">
+<span>120 FPS</span>
+<div class="sw" onclick="this.classList.toggle('on')"></div>
+</div>
+
+<label>Acerto de capa (%)</label>
+<input type="range" min="10" max="200" value="100"
+oninput="capa.innerText=this.value+'%'">
+<div class="value" id="capa">100%</div>
+
+<label>Bala não temer (%)</label>
+<input type="range" min="10" max="200" value="100"
+oninput="bala.innerText=this.value+'%'">
+<div class="value" id="bala">100%</div>
+
+<label>FOV invisível (%)</label>
+<input type="range" min="10" max="200" value="100"
+oninput="fov.innerText=this.value+'%'">
+<div class="value" id="fov">100%</div>
+
+<button class="btn">ATIVAR NO JOGO</button>
+</div>
+</body>
+</html>
